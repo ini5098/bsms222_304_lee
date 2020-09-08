@@ -533,7 +533,7 @@ murders$state[low]
 ```{r}
 northeast <- murders$region == "Northeast"
 ind <- low & northeast
-murders$sstate[ind]
+murders$state[ind]
 ```
 5\. In a previous exercise we computed the murder rate for each state and the average of these numbers. How many states are below the average?
 ```{r}
@@ -547,11 +547,11 @@ murders$state[ind]
 ```
 7\. Use the %in% operator to create a logical vector that answers the question: which of the following are actual abbreviations: MA, ME, MI, MO, MU?
 ```{r}
-c("MA", "ME", "MI", "MO", "MU") %in% murders$state
+c("MA", "ME", "MI", "MO", "MU") %in% murders$abb
 ```
 8\. Extend the code you used in exercise 7 to report the one entry that is not an actual abbreviation. Hint: use the ! operator, which turns FALSE into TRUE and vice versa, then which to obtain an index.
 ```{r}
-!c("MA", "ME", "MI", "MO", "MU") %in% murders$state
+c("MA","ME","MI","MO","MU")[which(!c("MA", "ME", "MI", "MO", "MU") %in% murders$abb)]
 ```
 # **2.15 Basic plots**
 In Chapter 7 we describe an add-on package that provides a powerful approach to producing plots in R. We then have an entire part on Data Visualization in which we provide many examples. Here we briefly describe some of the functions that are available in a basic R installation.
